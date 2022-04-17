@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Now time</title>
+    <link rel = "stylesheet" href ="style.css">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src = "main.js"></script>
+</head>
+<body onload="ShowTime()">
+    <h1><div class="rwdtxt" id="showbox"></div></h1>
+    
+        <script language="JavaScript">
+            function Appendzero(obj)
+            {
+                if(obj<10)return "0"+""+obj;
+                else return obj;
+            }
+
+            function ShowTime(){
+                var NowDate=new Date();
+                var h=NowDate.getHours();
+                var m=NowDate.getMinutes();
+                var s=NowDate.getSeconds();
+                document.getElementById('showbox').innerHTML = Appendzero(h)+':'+Appendzero(m)+':'+Appendzero(s);
+                setTimeout('ShowTime()',1000);
+            }
+            
+        </script>
+    
+
+
+    <h2><div class="rwdtxt" id="current_date"></div></h2>
+        <script>
+            var day_list = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var week = new Date().getDay();
+            document.getElementById("current_date").innerHTML = day_list[week]+" " + year + "/" + month + "/" + day;
+            </script>  
+    
+
+</body>
+</html>
