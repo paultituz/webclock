@@ -1,2 +1,2 @@
 # webclock
-link:
+link:https://paultituz.github.io/webclock/
